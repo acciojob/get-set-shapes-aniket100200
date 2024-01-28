@@ -1,29 +1,33 @@
-//complete this code
 class Rectangle {
-	constructor(width,height){
-		this.width=width;
-		this.height=height;
-		
-	}
+    constructor(width, height) {
+        this._width = width;
+        this._height = height;
+    }
 
-	get getWidth(){
-		return this.width;
-	}
-	get getHeight(){
-		return this.height;
-	}
+    get width() {
+        return this._width;
+    }
 
-	getArea(){
-return this.width*this.height;
-	}
+    get height() {
+        return this._height;
+    }
+
+    getArea() {
+        return this._width * this._height;
+    }
 }
 
 class Square extends Rectangle {
-	getPerimeter(){
-		return 4*this.height;
-	}
+    constructor(side) {
+        super(side, side); // Call the superclass constructor with side for both width and height
+    }
+
+    getPerimeter() {
+        return 4 * this.width; // Perimeter of a square is 4 times the side length
+    }
 }
 
-// Do not change the code below this line
+// Assigning classes to window object
 window.Rectangle = Rectangle;
 window.Square = Square;
+
